@@ -9,7 +9,7 @@ function App() {
   const [toggle, setToggle] = React.useState(false);
 
   const handleButton = () => {
-    if (navigator.share === undefined) {
+    if (navigator.share !== undefined) {
       setToggle(true);
       navigator
         .share({
