@@ -10,13 +10,11 @@ function App() {
 
   const handleButton = () => {
     if (navigator.share === undefined) {
-      console.log("HElo");
       setToggle(true);
-      console.log(navigator);
       navigator
         .share({
-          title: `${title}`,
-          url: `${url}`
+          title: "Hello",
+          url: `www.google.com`
         })
         .then(() => {
           console.log("thanks for sharing");
@@ -46,7 +44,16 @@ function App() {
           Share This Story
         </button>
       </div>
-      {toggle && <>DIv</>}
+      {toggle && (
+        <>
+          <div className="show-share">
+            <div className="share">
+              <h2>Share Now</h2>
+              <button onClick={handleOverlay}>Social Link</button>
+            </div>
+          </div>
+        </>
+      )}
       {/* <div className="overlay">
         <div className="share">
           <h2>Share Now</h2>
