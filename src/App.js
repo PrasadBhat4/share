@@ -2,10 +2,6 @@ import React from "react";
 import "./main.scss";
 
 function App() {
-  const title = window.document.title;
-  const url = window.document.location.href;
-  const overlay = document.querySelector(".overlay");
-  const shareModal = document.querySelector(".share");
   const [toggle, setToggle] = React.useState(false);
 
   const handleButton = () => {
@@ -25,11 +21,6 @@ function App() {
     }
   };
 
-  const handleOverlay = () => {
-    overlay.classList.remove("show-share");
-    shareModal.classList.remove("show-share");
-  };
-
   return (
     <div className="abc">
       <div className="container">
@@ -44,22 +35,7 @@ function App() {
           Share This Story
         </button>
       </div>
-      {toggle && (
-        <>
-          <div className="show-share">
-            <div className="share">
-              <h2>Share Now</h2>
-              <button onClick={handleOverlay}>Social Link</button>
-            </div>
-          </div>
-        </>
-      )}
-      {/* <div className="overlay">
-        <div className="share">
-          <h2>Share Now</h2>
-          <button onClick={handleOverlay}>Social Link</button>
-        </div>
-      </div> */}
+      {toggle && <></>}
     </div>
   );
 }
